@@ -12,12 +12,14 @@ unless fs.existsSync "./node_modules/"
   throw "Missing node_modules. Have you run 'npm install .' yet?"
 
 task 'manifest', 'Rebuild the cache.manifest file', ->
-  fs.readFile "public/cache.manifest.template", (err, data) ->
-    throw err if err
-    hash = (new Date()).getTime()
-    data = data.toString().replace(/{{unique_id}}/, hash)
-    fs.writeFile "public/cache.manifest", data, (err) ->
+  if fs.existsSync file
+    console.log "public/cache.manifest.template exists, rebuilding"
+    fs.readFile "public/cache.manifest.template", (err, data) ->
       throw err if err
+      hash = (new Date()).getTime()
+      data = data.toString().replace(/{{unique_id}}/, hash)
+      fs.writeFile "public/cache.manifest", data, (err) ->
+        throw err if err
 
 task 'build', 'Build public/ from src/', ->
   invoke 'manifest'

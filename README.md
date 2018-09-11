@@ -22,7 +22,7 @@ Place your files in the following directories:
 
 ## Includes ##
 
-* [Jasmine](http://pivotal.github.com/jasmine/) for testing
+* [Jasmine](https://jasmine.github.io/) for testing
 * [CoffeeScript](http://coffeescript.org/)
 * [hem](http://spinejs.com/docs/hem) for building and compiling
 

@@ -1,6 +1,8 @@
 JSApp-Boilerplate
 =================
 
+**This repository is no longer maintained.**
+
 A Boilerplate template for JS apps.
 
 Download the [latest][] version as [tar.gz][] or [zip][] and use that as your
